@@ -1,0 +1,56 @@
+{
+  "name": "object-controls",
+  "version": "0.00.001",
+  "description": "A master control that will apply sub-controls to an object that the mouse is over or that is being touched.",
+  "main": "build/js/object-controls.min.js",
+  "jsnext:main": "build/js/object-controls-module.js",
+  "module": "build/js/object-controls-module.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
+  },
+  "eslintConfig": {
+    "extends": "mdcs"
+  },
+  "scripts": {
+    "lib": "rollup -c",
+    "duality": "rollup -c rollup.config.duality.js",
+    "libdev": "rollup -c -m inline --watch",
+    "dualitydev": "rollup -c rollup.config.duality.js -m inline --watch",
+    "watch": "npm-run-all --parallel libdev maindev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+  	"build-uglify": "rollup -c && mv build/js/object-controls.min.js build/js/object-controls.umd.js && cp License build/js/object-controls.min.js && uglifyjs build/js/object-controls.umd.js -cm >> build/js/object-controls.min.js",
+  	"build-uglify-duality": "rollup -c rollup.config.duality.js && mv build/js/duality-main.min.js build/js/duality-main.umd.js && cp License build/js/duality-main.min.js && uglifyjs build/js/duality-main.umd.js -cm >> build/js/duality-main.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hooverdn/object-controls.git"
+  },
+  "keywords": [
+    "three.js",
+    "controls"
+  ],
+  "author": "Doug Hoover <doguleez@gmail.com> (@dawguleez)",
+  "license": "ISC",
+  "homepage": "https://github.com/hooverdn/object-controls#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "cheerio": "^1.0.0-rc.2",
+    "eslint-config-mdcs": "^4.2.2",
+    "jsdoc": "^3.5.5",
+    "mocha": "^4.0.1",
+    "npm-run-all": "^4.1.2",
+    "rollup": "^0.51.5",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-watch": "^4.3.1"
+  },
+  "dependencies": {
+    "marked": "^0.3.6"
+  }
+}

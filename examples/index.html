@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Duality of Regular (Platonic) Solids</title>
+  <link rel="stylesheet" href="css/text.css">
+
+  <style>
+    body {
+      margin: 0;
+      overflow: scroll;
+      font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+    .text {
+      margin: 5%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="topleft">
+      &nbsp;
+    </div>
+    <div class="topright">
+	  &nbsp;
+    </div>
+    <div class="topcenter">
+      <img src="images/dogtooth-55-50.png">
+    </div>
+  </div>
+  
+  <div id="text" class="text" style="display: none;" >
+    <h1>Duality of Regular Solids</h1>
+
+    Two polyhedra are dual if:
+    <ol>
+      <li>
+        The faces of one correspond to the vertices of the other, and
+        vice versa.
+      </li>
+
+      <li>
+        Each edge separating adjacent faces in one corresponds to the
+        edge joining the corresponding vertices in the other.
+      </li>
+    </ol>
+
+    The five classic regular polyhedra (Platonic solids) include three dual pairs.
+    <ul>
+      <li>
+        <i>Tetrahedron</i> is dual to <i>tetrahedron</i>.
+      </li>
+      <li>
+        <i>Cube</i> is dual to <i>octahedron</i>.
+      </li>
+      <li>
+        <i>Dodecahedron</i> is dual to <i>icosahedron</i>.
+      </li>
+    </ul>
+
+    Navigation:
+    <ol>
+      <li>
+        To rotate a dual pair, drag the mouse
+        over it while holding the LEFT button down.
+      </li>
+      <li>
+        To bring a dual pair closer to or farther from the camera,
+		hold the mouse WHEEL (MIDDLE button) down and move the mouse
+		up or down.  (Due to a fit of sloth, I haven't implemented
+		this for turning the mouse wheel.)
+      </li>
+      <li>
+        To bring the camera closer to or farther from a dual pair,
+        hold the SHIFT key down and either
+		<ul>
+		  <li>rotate the mouse WHEEL or else </li>
+		  <li>hold it down and move the mouse up or down.</li>
+		</ul>
+      </li>
+      <li>
+        To move a dual pair around, drag the mouse over it while holding the
+        RIGHT mouse button down.
+      </li>
+	  <li>
+		To roll a dual pair around, drag the mouse over it while
+		either:
+		<ul>
+		  <li>holding the LEFT button and the SHIFT key down; or</li>
+		  <li>holding bother LEFT and RIGHT mouse buttons down.</li>
+		</ul>
+		We get this effect by invoking two controls, the rotate control from
+		(1) and the move control from (3).
+	  </li>
+	  <li>
+		To zoom the camera, drag the mouse (anywhere) while holding
+		down the LEFT and MIDDLE (WHEEL) mouse buttons.
+	  </li>
+	  <li>
+		To move the camera in a plane relative to an object, drag the
+		mouse on that object while holding down the MIDDLE (WHEEL) and RIGHT
+		mouse buttons.
+	  </li>
+    </ol>
+	I realize that not all possible combinations will work on all
+	platforms.  For example, touchpads and Apple-type mice don't have
+	an equivalent for pressing the mouse wheel (A.K.A. the middle
+	button).  I may look at this in the future, but meanwhile, if you
+	want to fiddle with it&hellip;
+
+	<p>The source code for this project is available at
+	our <a href="https://www.github.com/hooverdn/control-framework"
+	target="_blank">Control Framework</a> github repository.
+	
+    <p><a href="duality.html">Continue</a></p>
+  </div>
+
+  <div id="text-mobile" class="text" style="display: none;" >
+    <h1>Duality of Regular Solids</h1>
+
+    Two polyhedra are dual if:
+    <ol>
+      <li>
+        The faces of one correspond to the vertices of the other, and
+        vice versa.
+      </li>
+
+      <li>
+        Each edge separating adjacent faces in one corresponds to the
+        edge joining the corresponding vertices in the other.
+      </li>
+    </ol>
+
+    The five classic regular polyhedra (Platonic solids) include three dual pairs.
+    <ul>
+      <li>
+        <i>Tetrahedron</i> is dual to <i>tetrahedron</i>.
+      </li>
+      <li>
+        <i>Cube</i> is dual to <i>octahedron</i>.
+      </li>
+      <li>
+        <i>Dodecahedron</i> is dual to <i>icosahedron</i>.
+      </li>
+    </ul>
+
+    Navigation:
+    <ul>
+      <li>
+        To rotate a dual pair, drag your finger over it.
+      </li>
+      <li>
+        To bring a pair closer or farther, use a two finger pinch over
+		it.
+      </li>
+      <li>
+        Drag three fingers on a dual pair to move it around.
+      </li>
+    </ul>
+    <a href="duality.html">Continue</a>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <script>
+          var a = 'd';
+          var h = 'z';
+          var d = 'u';
+          var t3 = '6';
+          var c = 'g';
+          var f = 'e';
+          var t4 = '4';
+          var b = 'o';
+          var e = 'l';
+          var t1 = '&';
+          var g = 'e';
+          var m = "gmail";
+          var n = "com";
+          var t2 = '#';
+          document.write(a + b + c + d + e + f + g + h + t1 + t2 + t3 +t4
+          + m + '.' + n + '<br/>');
+      </script>
+    </div>
+  </footer>
+  
+  <script type="text/javascript">
+
+      window.onload = function () {
+
+          var isMobile = navigator.userAgent.indexOf( 'Mobile' ) >= 0;
+          if ( isMobile ) {
+
+              document.body.style[ 'font-size' ] = '28px';
+              document.getElementById( 'text-mobile' ).style.display = "block";
+
+          } else {
+
+              document.getElementById( 'text' ).style.display = "block";
+
+          }
+      };
+
+      document.addEventListener( "contextmenu", function (e) {
+          e.preventDefault();
+      });
+  </script>
+
+</body>
+</html>
